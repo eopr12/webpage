@@ -1,4 +1,14 @@
 
+    @font-face{
+        font-family: OPTIBodoni-Antiqua;
+        src: url(D:\Design Source\Fonts\영문\Zara\OPTIBodoni-Antiqua.otf);
+        font-family: High Summit;
+        src url(D:\Design Source\Fonts\영문\High Summit\High Summit.otf);
+        font-family: Butler_Bold;
+        src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Bold.otf);
+        font-family: Butler_Medium;
+        src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Medium.otf);
+    }
     body{
         margin=0;
     }
@@ -6,21 +16,24 @@
         display: grid;
         grid-template-columns: 150px 1fr;
     }
-    #article{
-        margin= 20px;
+    #table{
+        font-family: High Summit;
+        padding= 200px;
     }
     /*
     block level element (화면 전체 이용)
     */
     h1{
-        font-size: 35px;
+        font-family: Butler_Bold;
+        font-size: 50px;
         text-align: center;
         border-bottom: 1px solid gray;
-        padding: 20px;
+        padding: 50px;
         margin:0px;
     }
     h2{
-        font-size:20px;
+        font-family: High Summit;
+        font-size:30px;
         margin: 20px;
         padding-left: 20px;
     }
@@ -32,6 +45,8 @@
         text-decoration: none;
     }
     #grid ol{
+        font-family: High Summit;
+        font-size:20px;
         border-right: 1px solid gray;
         text-decoration: underline;
         width: 100px;
