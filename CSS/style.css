@@ -1,60 +1,118 @@
 
     @font-face{
-        font-family: OPTIBodoni-Antiqua;
-        src: url(D:\Design Source\Fonts\영문\Zara\OPTIBodoni-Antiqua.otf);
         font-family: High Summit;
         src url(D:\Design Source\Fonts\영문\High Summit\High Summit.otf);
         font-family: Butler_Bold;
         src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Bold.otf);
         font-family: Butler_Medium;
         src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Medium.otf);
+        font-family: Mermaid;
+        src url(D:\Design Source\Fonts\영문\Mermaid\Mermaid.ttf);
+        font-family: Butler_Bold;
+        src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Bold);
+        font-family: AppleSDGothicNeoB;
+        src url(D:\Design Source\Fonts\영문\Apple산돌고딕Neo\AppleSDGothicNeoB.ttf);
+    }
+    html{
+        margin=0px;
     }
     body{
-        margin=0;
+        margin=0px;
     }
-    #grid{
+
+    #wrap {width:100%; height:900px; auto;}
+
+    #header {width: 100%; max-width: 100% height:177.5px;}
+
+    #nav {display: flex; flex-direction:row; align-items: center; justify-content: center;  position: absolute; font-family: AppleSDGothicNeoB; font-size:12px; font-weight:bold; list-style:none; width: 100%; height:40px; max-width: 100%; background: #0C1F34;}
+    #nav li {display: block; margin: 20px;}
+
+    #side {float: left; width: 154px; height: 600px; padding-top:50px;}
+
+    #contents {font-family: AppleSDGothicNeoB; float: left; width: 700px; height: 600px;}
+
+    #footer {position: fixed; bottom:0px; float:left; width: 100%; height: 100px; background: #0C1F34;}
+
+
+
+    #instaimg{
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 150px;
+        right: 85px;
+    }
+    #instafont{
+        font-family: High Summit;
+        font-size: 14px;
+        position: absolute;
+        top: 146px;
+        right: 30px;
+    }
+
+    #head{
+        background-color: #fff9ef;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+    #bighead{
+        font-family: Mermaid;
+        font-size: 45px;
+       }
+    #smallhead{
+        font-family: Mermaid;
+        font-size: 20px;
+       }
+
+    #side{
         display: grid;
         grid-template-columns: 150px 1fr;
     }
-    #table{
-        font-family: High Summit;
-        padding= 200px;
-    }
+
     /*
     block level element (화면 전체 이용)
     */
+
     h1{
-        font-family: Butler_Bold;
-        font-size: 50px;
-        text-align: center;
-        border-bottom: 1px solid gray;
-        padding: 50px;
+        padding-top: 35px;
         margin:0px;
+    }
+    h3{
+        margin:0px;
+        padding-bottom: 50px;
     }
     h2{
         font-family: High Summit;
-        font-size:30px;
+        font-size:20px;
         margin: 20px;
         padding-left: 20px;
     }
-    /*
-    inline element (자신의 부피만큼만 이용)
-    */
     a{
         color: black;
         text-decoration: none;
     }
-    #grid ol{
-        font-family: High Summit;
+    #side ol{
+        font-family: Mermaid;
         font-size:20px;
-        border-right: 1px solid gray;
-        text-decoration: underline;
+        border-right: 1px 1fr light gray;
+        text-decoration: none;
+        list-style-type:none;
         width: 100px;
         margin: 0px;
         padding: 20px;
         padding-left: 33px;
     }
-    @media(max-width:800px){
+    #contents{
+        font-family: AppleSDGothicNeoB;
+    }
+    @media(max-width:830px){
+        #side{
+            height:auto;
+        }
+        #insta{
+            display:none;
+        }
         #grid{
             display: block;
         }
@@ -64,3 +122,5 @@
         h1{
         border-bottom: none;
         }
+        }
+
