@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>layout5_1</title>
+    <style>
+    /* structure */
+    * {margin: 0; padding: 0;}
+    body {background-color: white;}
+    #wrap {width: 1200px; margin:0 auto;}
+    .header {width: 100%; height: 150px; background-color: #fff9ef; text-decoration: none; text-align: center; padding: 0px; margin: 0px;}
+    .nav {display: flex; flex-direction:row; align-items: center; justify-content: center; font-family: AppleSDGothicNeoB; font-size:12px; font-weight:bold; list-style:none; width: 100%; height:40px; background: #0C1F34; text-decoration: none;}
+    .nav > li {display: block; margin: 20px;}
+    .subcate {display: flex; flex-direction:row; align-items: center; justify-content: center; list-style:none; padding: 0px; margin: 0px; font-family: AppleSDGothicNeoB; font-size:9px; font-weight:bold; font-color: #0C1F34; text-decoration: none; background-color: #fff9ef;}
+    .subcate > li {display: block; margin: 10px;}
+
+    /* aside */
+    .aside {width: 100%;}
+    .cropping{max-height: 400px; overflow: hidden;}
+    .cropping img{width: 100%; max-height: initial; margin-top: -30%;}
+    .text-wrap {display: grid; height:100%; width: 100%; margin: 0px auto; word-break: keep-all; position: relative; font-family: Mermaid; font-size: 60px;}
+    .text {width: 100%; padding: 5px 10px; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate( -50%, -50% );}
+
+    /* article1 */
+    .article1 {float: left; width: 100%; height: 300px; background: #F5F3F1; overflow:hidden;}
+    .a1 {display: flex; flex-direction:row; padding:10px; float: left;}
+    .a1_1, .a1_2, .a1_3, .a1_4, .a1_5 {width:170px; height:200px; padding: 0px; margin-left: 30px;}
+    .a1_p1, .a1_p2, .a1_p3, .a1_p4, .a1_p5 {width: 170px; height: 200px; float: left; border-radius: 5px;}
+    #a1_d1, #a1_d2, #a1_d3, #a1_d4, #a1_d5 {padding: 2px; font-family: AppleSDGothicNeoEB; font-size: 12px; font-weight:bold; text-align: center; color: gray; border-bottom: solid; 1px;}
+    .article1 > h2 {font-family: High Summit; font-size:20px; margin: 20px; padding-left: 20px;}
+
+    /* article2 */
+    .article2 {float: left; width: 100%; height: 300px; background: #F5F3F1; overflow:hidden;}
+    .a2 {display: flex; flex-direction:row; padding:10px; float: left;}
+    .a2_1, .a2_2, .a2_3, .a2_4, .a2_5 {width:170px; height:200px; padding: 0px; margin-left: 30px;}
+    .a2_p1, .a2_p2, .a2_p3, .a2_p4, .a2_p5 {width: 170px; height: 200px; float: left; border-radius: 5px;}
+    #a2_d1, #a2_d2, #a2_d3, #a2_d4, #a2_d5 {padding: 2px; font-family: AppleSDGothicNeoEB; font-size: 12px; font-weight:bold; text-align: center; color: gray; border-bottom: solid; 1px;}
+    .article2 > h2 {font-family: High Summit; font-size:20px; margin: 20px; padding-left: 20px;}
+
+    /* article3 */
+    .article3 {float: left; width: 100%; height: 300px; background: #F5F3F1; overflow:hidden; padding-bottom:50px;}
+    .a3 {display: flex; flex-direction:row; padding:10px; float: left;}
+    .a3_1, .a3_2, .a3_3, .a3_4, .a3_5 {width:170px; height:200px; padding: 0px; margin-left: 30px;}
+    .a3_p1, .a3_p2, .a3_p3, .a3_p4, .a3_p5 {width: 170px; height: 200px; float: left; border-radius: 5px;}
+    #a3_d1, #a3_d2, #a3_d3, #a3_d4, #a3_d5 {padding: 2px; font-family: AppleSDGothicNeoEB; font-size: 12px; font-weight:bold; text-align: center; color: gray; border-bottom: solid; 1px;}
+    .article3 > h2 {font-family: High Summit; font-size:20px; margin: 20px; padding-left: 20px;}
+
+    /* footer */
+    .footer {clear: both; width: 100%; height: 150px; background: #0C1F34;}
+    .xans-layout-footer ul {position: relative; margin: 0 auto; padding: 50px 0 40px; width: 90%; font-size: 0; line-height: 0; text-align: left; clear: both; overflow: hidden;}
+    ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    }
+    .xans-layout-footer {
+    margin: 0 auto;
+    font-size: 11px;
+    line-height: 20px;
+    text-align: center;
+    border-top: 1px #ddd solid;
+    }
+
+
+    /* detail */
+    #insta{width: 1200px; background-color: #fff9ef; padding-top:30px; padding-bottom:30px;}
+    #insta > h7 {text align: right;}
+    #instaimg{
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        right: 440px;
+    }
+    #instafont{
+        font-family: High Summit;
+        font-size: 14px;
+        position: absolute;
+        right: 385px;
+    }
+    h1{
+        text-decoration: none;
+        padding-top: 30px;
+        margin:0px;
+        font-family: Mermaid;
+        font-size: 45px;
+    }
+    h3{
+        display: block;
+        margin:0px;
+        padding-bottom: 0px;
+        font-family: Mermaid;
+        font-size: 20px;
+    }
+
+    .xans-record- > a {list-decoration: none; color: gray; text-decoration: none; }
+
+    /* media query */
+        /* 화면 너비 0 ~ 1200px */
+        @media (max-width: 1240px){
+            #wrap {width: 100%;}
+            .article1 {height: 450px;}
+            .article2 {height: 450px;}
+            .article3 {width: 100%;}
+            .a1_1, .a1_2, .a1_3, .a1_4, .a1_5 {width:260px; height:300px; margin-left: 25px;}
+            .a1_p1, .a1_p2, .a1_p3, .a1_p4, .a1_p5 {width: 260px; height: 300px; margin-left:10px;}
+            .a2_1, .a2_2, .a2_3, .a2_4, .a2_5 {width:260px; height:300px; margin-left: 25px;}
+            .a2_p1, .a2_p2, .a2_p3, .a2_p4, .a2_p5 {width: 260px; height: 300px; margin-left:10px;}
+            .a3_1, .a3_2, .a3_3, .a3_4, .a3_5 {width:260px; height:300px; margin-left: 25px;}
+            .a3_p1, .a3_p2, .a3_p3, .a3_p4, .a3_p5 {width: 260px; height: 300px; margin-left:10px;}
+        }
+        /* 화면 너비 0 ~ 768px */
+        @media (max-width: 768px){
+            .subcate {display: none;}
+            .article1 {width: 50%; padding-top:0px;}
+            .article2 {width: 50%;}
+            .a1_1, .a1_2, .a1_3, .a1_4, .a1_5 {width:260px; height:300px; margin-left: 25px;}
+            .a1_p1, .a1_p2, .a1_p3, .a1_p4, .a1_p5 {width: 260px; height: 300px; margin-left:10px;}
+            .a2_1, .a2_2, .a2_3, .a2_4, .a2_5 {width:260px; height:300px; margin-left: 25px;}
+            .a2_p1, .a2_p2, .a2_p3, .a2_p4, .a2_p5 {width: 260px; height: 300px; margin-left:10px;}
+            .a3_1, .a3_2, .a3_3, .a3_4, .a3_5 {width:260px; height:300px; margin-left: 25px;}
+            .a3_p1, .a3_p2, .a3_p3, .a3_p4, .a3_p5 {width: 260px; height: 300px; margin-left:10px;}
+        }
+        /* 화면 너비 0 ~ 480px */
+        @media (max-width: 500px){
+            .article1 {width: 100%; height: 300px;}
+            .article2 {width: 100%; height: 300px;}
+            .a1_1, .a1_2, .a1_3, .a1_4, .a1_5 {width:150px; height:200px; margin-left: 10px;}
+            .a1_p1, .a1_p2, .a1_p3, .a1_p4, .a1_p5 {width: 150px; height: 200px; margin-left:10px;}
+            .a2_1, .a2_2, .a2_3, .a2_4, .a2_5 {width:150px; height:200px; margin-left: 10px;}
+            .a2_p1, .a2_p2, .a2_p3, .a2_p4, .a2_p5 {width: 150px; height: 200px; margin-left:10px;}
+            .a3_1, .a3_2, .a3_3, .a3_4, .a3_5 {width:150px; height:200px; margin-left: 10px;}
+            .a3_p1, .a3_p2, .a3_p3, .a3_p4, .a3_p5 {width: 150px; height: 200px; margin-left:10px;}
+        }
+
+        @font-face{
+        font-family: High Summit;
+        src url(D:\Design Source\Fonts\영문\High Summit\High Summit.otf);
+        font-family: Butler_Bold;
+        src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Bold.otf);
+        font-family: Butler_Medium;
+        src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Medium.otf);
+        font-family: Mermaid;
+        src url(D:\Design Source\Fonts\영문\Mermaid\Mermaid.ttf);
+        font-family: Butler_Bold;
+        src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Bold);
+        font-family: AppleSDGothicNeoB;
+        src url(D:\Design Source\Fonts\영문\Apple산돌고딕Neo\AppleSDGothicNeoB.ttf);
+        font-family: AppleSDGothicNeoEB;
+        src url(D:\Design Source\Fonts\영문\Apple산돌고딕Neo\AppleSDGothicNeoEB.ttf);
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="subcate">
+                <li id="category" class="xans-element- xans-layout xans-layout-category"><li class="position">
+                        <li class="xans-record-"><a href="/product/list.html?cate_no=66">BEST</a></li>
+                        <li class="xans-record-"><a href="/product/list.html?cate_no=82"><b>GOLIGHTLY MADE</b></a></li>
+                        <li class="xans-record-"><a href="/product/list.html?cate_no=122">NEW</a></li>
+                        <li class="xans-record-"><a href="/product/list.html?cate_no=150">베스트재입고</a></li>
+                        <li class="xans-record-"><a href="/product/list.html?cate_no=68">회원가입</a></li>
+                        <li class="xans-record-"><a href="/product/list.html?cate_no=108">마이페이지</a></li>
+                </li>
+        </div>
+
+        <header class="header">
+            <div id="head">
+                <h1><a style="color: #0C1F34; text-decoration: none;" href="file:///C:/Users/User-Pc/anaconda3/envs/PycharmProjects/pycharm%20files/webpage/CSS/CSS_shop_201220.html">Becky Golightly</a></h1>
+                <h3><a style="color: #0C1F34;" style=font-size:"14px;">toward your tiffany's</a></h3>
+            </div>
+        </header>
+        <div id="insta">
+            <h7><img id="instaimg" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Img Source\instagram logo.png" width="300px" height="300px">
+            <a id="instafont" style="text-decoration: none;" href="https://www.instagram.com/yignite_/">: yignite_ </a>
+            </h7>
+        </div>
+        <nav class="nav">
+            <li><a style="color: white; text-decoration: none;" href="file:///C:/Users/User-Pc/anaconda3/envs/PycharmProjects/pycharm%20files/webpage/CSS/CSS_shop_201220.html">Home</a></li>
+            <li><a style="color: white; text-decoration: none;" href="#">Shop</a></li>
+            <li><a style="color: white; text-decoration: none;" href="#">Pictures</a></li>
+            <li><a style="color: white; text-decoration: none;" href="#">Film</a></li>
+            <li><a style="color: white; text-decoration: none;" href="#">Inspiration</a></li>
+        </nav>
+        <aside class="cropping">
+            <div class="text-wrap">
+                <img class="image" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Img Source\intro.jpg">
+                    <div class="text">
+                        <p>Forget 'bout your mean reds</p>
+                    </div>
+            </div>
+        </aside>
+        <section class="article1">
+            <h2>Today's Epiphany</h2>
+                <div class="a1">
+                    <div class="a1_1">
+                        <img class="a1_p1" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/1.jpg">
+                        <div id="a1_d1" class="a1_p1">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a1_2">
+                        <img class="a1_p2" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/2.jpg">
+                        <div id="a1_d2" class="a1_p2">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a1_3">
+                        <img class="a1_p3" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/3.jpg">
+                        <div id="a1_d3" class="a1_p3">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a1_4">
+                        <img class="a1_p4" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/4.jpg">
+                        <div id="a1_d4" class="a1_p4">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a1_5">
+                        <img class="a1_p5" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/5.jpg">
+                        <div id="a1_d5" class="a1_p5">
+                            2020/11/27
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="article2">
+            <h2>Today's Epiphany</h2>
+                <div class="a2">
+                    <div class="a2_1">
+                        <img class="a2_p1" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/1.jpg">
+                        <div id="a2_d1" class="a2_p1">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a2_2">
+                        <img class="a2_p2" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/2.jpg">
+                        <div id="a2_d2" class="a2_p2">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a2_3">
+                        <img class="a2_p3" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/3.jpg">
+                        <div id="a2_d3" class="a2_p3">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a2_4">
+                        <img class="a2_p4" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/4.jpg">
+                        <div id="a2_d4" class="a2_p4">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a2_5">
+                        <img class="a2_p5" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/5.jpg">
+                        <div id="a2_d5" class="a2_p5">
+                            2020/11/27
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="article3">
+            <h2>Today's Epiphany</h2>
+                <div class="a3">
+                    <div class="a3_1">
+                        <img class="a3_p1" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/1.jpg">
+                        <div id="a3_d1" class="a3_p1">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a3_2">
+                        <img class="a3_p2" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/2.jpg">
+                        <div id="a3_d2" class="a3_p2">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a3_3">
+                        <img class="a3_p3" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/3.jpg">
+                        <div id="a3_d3" class="a3_p3">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a3_4">
+                        <img class="a3_p4" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/4.jpg">
+                        <div id="a3_d4" class="a3_p4">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a3_5">
+                        <img class="a3_p5" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/5.jpg">
+                        <div id="a3_d5" class="a3_p5">
+                            2020/11/27
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <footer class="footer">
+            <ul class="costom">
+            <li class="first adress">
+                <div class="box">
+                    <h3>COMPANY. (주) 앤드모어 / ANDMORE CO.</h3>
+                    <p><span>owner. 김수민 / KIM SOO MIN</span> <span>tel. 070-7705-5595</span></p>
+                    <p><span>business no. 390-86-00737</span> <span>mail order license. 제 2018-서울동대문-0658호 <a href="#none" onclick="window.open('http://www.ftc.go.kr/bizCommPop.do?wrkr_no=3908600737', 'bizCommPop', 'width=750, height=950;');return false;">[사업자정보확인]</a></span></p>
+                    <p><span>personal info manager. 김재형 (slowandmore@naver.com)</span></p>
+                    <p><span>address. [02622] 서울특별시 동대문구 답십리동 530-16 평화빌딩 4층 슬로우앤드</span></p>
+                    <p><span>81, Gomisul-ro, Dongdaemun-gu, Seoul, Republic of Korea</span></p>
+
+                    <!-- p class="ment">모든이미지는 <b>(주) 앤드모어 / ANDMORE CO.</b>의 소유로 법적인 보호를 받고 있습니다.<br/>무단게재 및 도용시 저작권법에 의해 형사고발 및 손해배상을 묻습니다.</p -->
+                    <p class="copy gBlank5 txtEm">copyright © <b>슬로우앤드</b> all rights reserved / published by plain design</p>
+                </div>
+            </li>
+
+            <li>
+                <div class="box">
+                    <h3>C/S CENTER</h3>
+                    <h4>070-7705-5595</h4>
+                    <p>OPEN : am10:00 - pm17:00</p>
+                    <p>BREAK : pm12:00-pm13:00</p>
+                    <p>(sat / sun / holiday OFF)</p>
+
+<!------------------------------------------------------------------------------------------------------------------
+사용설명서입니다. 본 소스는 1~5행입니다.
+
+색상 - 태그
+검정색 - 본문 내용입니다.
+
+검정색의 본문내용을 수정 후 우측상단 모두저장 버튼을 클릭하여 저장해주세요.
+
+
+
+디자인 편집창에서 태그 손상이 있을 경우 새빨갛게 표기되며 이경우 아래 세팅당시 원본소스로 대처 수정 하시길 바랍니다.
+(세팅당시 원본소스)
+<h3>C/S CENTER</h3>
+<h4>070-7705-5595</h4>
+<p>am10:00 - pm17:00</p>
+<p>BREAK TIME : pm12:00-pm13:00</p>
+<p>(sat / sun / holiday OFF)</p>
+------------------------------------------------------------------------------------------------------------------->
+                </div>
+            </li>
+
+            <li>
+                <div class="box">
+                    <h3>BANK ACCOUNT</h3>
+                    <p>기업 029-081822-04-039</p>
+                    <p>예금주:(주)앤드모어</p>
+
+<!------------------------------------------------------------------------------------------------------------------
+사용설명서입니다. 본 소스는 1~3행입니다.
+
+색상 - 태그
+검정색 - 본문 내용입니다.
+
+검정색의 본문내용을 수정 후 우측상단 모두저장 버튼을 클릭하여 저장해주세요.
+
+
+
+디자인 편집창에서 태그 손상이 있을 경우 새빨갛게 표기되며 이경우 아래 세팅당시 원본소스로 대처 수정 하시길 바랍니다.
+(세팅당시 원본소스)
+<h3>BANK ACCOUNT</h3>
+<p>기업 029-081822-04-039</p>
+<p>예금주:(주)앤드모어</p>
+------------------------------------------------------------------------------------------------------------------->
+                    <select onchange="if(this.value) window.open(this.value);"><option value="">인터넷뱅킹 바로가기&nbsp;&nbsp; </option>
+                <option value="https://www.kbstar.com/">&nbsp;국민은행</option>
+                <option value="http://www.epost.go.kr/main.retrieveMainPage.comm">&nbsp;우체국</option>
+                <option value="http://www.nonghyup.com/Main/main.aspx">&nbsp;NH농협</option>
+                <option value="http://www.standardchartered.co.kr/np/kr/Intro.jsp">&nbsp;SC제일은행</option>
+                <option value="https://www.wooribank.com/">&nbsp;우리은행</option>
+                <option value="https://www.ibk.co.kr/">&nbsp;IBK기업은행</option>
+                <option value="https://www.kebhana.com/">&nbsp;KEB하나은행</option>
+                <option value="https://www.shinhan.com/index.jsp">&nbsp;신한은행</option>
+                <option value="https://pib.kjbank.com/ib20/mnu/BPB0000000001">&nbsp;광주은행</option>
+                <option value="https://www.dgb.co.kr/dgb_ebz_main.jsp">&nbsp;대구은행</option>
+                <option value="https://www.jbbank.co.kr/">&nbsp;전북은행</option>
+                <option value="https://www.busanbank.co.kr/">&nbsp;부산은행</option>
+                <option value="https://www.citibank.co.kr/ComMainCnts0100.act">&nbsp;한국씨티은행</option>
+                <option value="https://www.e-jejubank.com/JeJuBankInfo.do">&nbsp;제주은행</option>
+                <option value="https://www.knbank.co.kr/ib20/mnu/BHP000000000001">&nbsp;경남은행</option></select>
+                </div>
+            </li>
+
+            <li>
+                <div class="box">
+                    <h3>[교환/반품 주소]</h3>
+                    <p>서울특별시 중랑구 망우로 271</p>
+                    <p>(상봉동,중랑우체국) 2층 소포실 SJC-슬로우앤드</p>
+                    <p>271, Mangu-ro, Jungnang-gu, Seoul, Republic of Korea</p>
+                    <u>* 공지사항 및 이용안내를 참고하여 지정택배사로 반품요청해주세요.</u>
+
+<!------------------------------------------------------------------------------------------------------------------
+사용설명서입니다. 본 소스는 1~4행입니다.
+
+색상 - 태그
+검정색 - 본문 내용입니다.
+
+검정색의 본문내용을 수정 후 우측상단 모두저장 버튼을 클릭하여 저장해주세요.
+
+
+
+디자인 편집창에서 태그 손상이 있을 경우 새빨갛게 표기되며 이경우 아래 세팅당시 원본소스로 대처 수정 하시길 바랍니다.
+(세팅당시 원본소스)
+<h3>[교환/반품 주소]</h3>
+<p>울특별시 중랑구 망우로 271</p>
+<p>(상봉동,중랑우체국)</p>
+<u>* 공지사항 및 이용안내를 참고하여 지정택배사로 반품요청해주세요.</u>
+------------------------------------------------------------------------------------------------------------------->
+                </div>
+            </li>
+
+            <li class="last">
+                <div class="box">
+                    <h3>SERVICE</h3>
+                    <p>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰 에서 가입한 구매안전 서비스를 이용하실 수 있습니다.</p>
+                    <div class="gBlank5">
+                        <a href="https://www.cafe24.com/" target="_blank"><img src="/plain/img/inis01.png"></a>
+                        <a href="http://www.ftc.go.kr/" target="_blank"><img src="/plain/img/inis02.png"></a>
+                        <a href="http://www.ftc.go.kr/www/bizCommList.do?key=232" target="_blank"><img src="/plain/img/inis03.png"></a>
+                        <a href="https://www.allthegate.com/hyosung/paysafe/escrow_check.jsp?service_id=CG_anne21&amp;biz_no=3908600737" target="_blank"><img src="/plain/img/inis04.png"></a>
+                    </div>
+                </div>
+            </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

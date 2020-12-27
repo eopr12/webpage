@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>layout5_1</title>
+    <style>
+    /* structure */
+    * {margin: 0; padding: 0;}
+    body {background-color: #e3f2fd;}
+    #wrap {width: 1200px; margin: 0 auto;}
+    .header {width: 100%; height: 150px; background-color: #fff9ef; text-decoration: none; text-align: center; padding: 0px; margin: 0px;}
+    #insta {width:100%;}
+    .nav {display: flex; flex-direction:row; align-items: center; justify-content: center; font-family: AppleSDGothicNeoB; font-size:12px; font-weight:bold; list-style:none; width: 100%; height:40px; background: #0C1F34; text-decoration: none;}
+    .nav > li {display: block; margin: 20px;}
+    .aside {float: left; width: 20%; height: 900px; background: white; color:white; padding-top:20px; padding-bottom: 50px;}
+
+    /* article1 */
+    .article1 {float: left; width: 80%; height: 300px; background: #F5F3F1; overflow:hidden; padding-top:20px;}
+    .a1 {display: flex; flex-direction:row; padding:10px; float: left;}
+    .a1_1, .a1_2, .a1_3, .a1_4 {width:170px; height:200px; padding: 0px; margin-left: 30px;}
+    .a1_p1, .a1_p2, .a1_p3, .a1_p4 {width: 170px; height: 200px; float: left; border-radius: 5px;}
+    #a1_d1, #a1_d2, #a1_d3, #a1_d4 {padding: 2px; font-family: AppleSDGothicNeoEB; font-size: 12px; font-weight:bold; text-align: center; color: gray; border-bottom: solid; 1px;}
+    .article1 > h2 {font-family: High Summit; font-size:20px; margin: 20px; padding-left: 20px;}
+
+    /* article2 */
+    .article2 {float: left; width: 80%; height: 300px; background: #F5F3F1; overflow:hidden;}
+    .a2 {display: flex; flex-direction:row; padding:10px; float: left;}
+    .a2_1, .a2_2, .a2_3, .a2_4 {width:170px; height:200px; padding: 0px; margin-left: 30px;}
+    .a2_p1, .a2_p2, .a2_p3, .a2_p4 {width: 170px; height: 200px; float: left; border-radius: 5px;}
+    #a2_d1, #a2_d2, #a2_d3, #a2_d4 {padding: 2px; font-family: AppleSDGothicNeoEB; font-size: 12px; font-weight:bold; text-align: center; color: gray; border-bottom: solid; 1px;}
+    .article2 > h2 {font-family: High Summit; font-size:20px; margin: 20px; padding-left: 20px;}
+
+    /* article3 */
+    .article3 {float: left; width: 80%; height: 300px; background: #F5F3F1; overflow:hidden; padding-bottom:50px;}
+    .a3 {display: flex; flex-direction:row; padding:10px; float: left;}
+    .a3_1, .a3_2, .a3_3, .a3_4 {width:170px; height:200px; padding: 0px; margin-left: 30px;}
+    .a3_p1, .a3_p2, .a3_p3, .a3_p4 {width: 170px; height: 200px; float: left; border-radius: 5px;}
+    #a3_d1, #a3_d2, #a3_d3, #a3_d4 {padding: 2px; font-family: AppleSDGothicNeoEB; font-size: 12px; font-weight:bold; text-align: center; color: gray; border-bottom: solid; 1px;}
+    .article3 > h2 {font-family: High Summit; font-size:20px; margin: 20px; padding-left: 20px;}
+
+    /* footer */
+    .footer {clear: both; width: 100%; height: 150px; background: #0C1F34;}
+
+    /* detail */
+    #instaimg{
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 120px;
+        right: 435px;
+    }
+    #instafont{
+        font-family: High Summit;
+        font-size: 14px;
+        position: absolute;
+        top: 122px;
+        right: 376px;
+    }
+    h1{
+        text-decoration: none;
+        padding-top: 35px;
+        margin:0px;
+        font-family: Mermaid;
+        font-size: 45px;
+    }
+    h3{
+        margin:0px;
+        padding-bottom: 50px;
+        font-family: Mermaid;
+        font-size: 20px;
+    }
+
+    #li{
+        font-family: Mermaid;
+        font-size:20px;
+        border-right: 1px 1fr light gray;
+        text-decoration: none;
+        list-style-type:none;
+        width: 100px;
+        margin: 0px;
+        padding: 20px;
+        padding-left: 33px;
+    }
+
+    /* media query */
+        /* 화면 너비 0 ~ 1200px */
+        @media (max-width: 1240px){
+            #wrap {width: 100%;}
+            .article1 {height: 450px;}
+            .a1_1, .a1_2, .a1_3, .a1_4 {width:260px; height:300px; margin-left: 25px;}
+            .a1_p1, .a1_p2, .a1_p3, .a1_p4 {width: 260px; height: 300px; margin-left:10px;}
+            .a2_1, .a2_2, .a2_3, .a2_4 {width:260px; height:300px; margin-left: 25px;}
+            .a2_p1, .a2_p2, .a2_p3, .a2_p4 {width: 260px; height: 300px; margin-left:10px;}
+            .a3_1, .a3_2, .a3_3, .a3_4 {width:260px; height:300px; margin-left: 25px;}
+            .a3_p1, .a3_p2, .a3_p3, .a3_p4 {width: 260px; height: 300px; margin-left:10px;}
+            .aside {padding-bottom: 0px;}
+            .article2 {height: 450px;}
+            .article3 {width: 100%;}
+        }
+        /* 화면 너비 0 ~ 768px */
+        @media (max-width: 768px){
+            #instaimg {position: fixed;}
+            #instafont {position: fixed;}
+            .aside {width: 100%; height: 300px;}
+            .article1 {width: 50%; padding-top:0px;}
+            .article2 {width: 50%;}
+        }
+        /* 화면 너비 0 ~ 480px */
+        @media (max-width: 500px){
+            .article1 {width: 100%; height: 300px;}
+            .article2 {width: 100%; height: 300px;}
+        }
+
+        @font-face{
+        font-family: High Summit;
+        src url(D:\Design Source\Fonts\영문\High Summit\High Summit.otf);
+        font-family: Butler_Bold;
+        src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Bold.otf);
+        font-family: Butler_Medium;
+        src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Medium.otf);
+        font-family: Mermaid;
+        src url(D:\Design Source\Fonts\영문\Mermaid\Mermaid.ttf);
+        font-family: Butler_Bold;
+        src url(D:\Design Source\Fonts\영문\Butler\Butler\Butler_Bold);
+        font-family: AppleSDGothicNeoB;
+        src url(D:\Design Source\Fonts\영문\Apple산돌고딕Neo\AppleSDGothicNeoB.ttf);
+        font-family: AppleSDGothicNeoEB;
+        src url(D:\Design Source\Fonts\영문\Apple산돌고딕Neo\AppleSDGothicNeoEB.ttf);
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header class="header">
+            <div id="insta">
+                <img src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Img Source\instagram logo.png" width="300px" height="300px" id="instaimg">
+                <div id="instafont"><a style="text-decoration: none;" href="https://www.instagram.com/yignite_/">: yignite_ </a> </div>
+            </div>
+            <div id="head">
+                <h1><a style="color: #0C1F34; text-decoration: none;" href="file:///C:/Users/User-Pc/anaconda3/envs/PycharmProjects/pycharm%20files/webpage/CSS/CSS_shop_201220.html">Becky Golightly</a></h1>
+                <h3><a style="color: #0C1F34;" style=font-size:"14px;">toward your tiffany's</a> </h3>
+            </div>
+        </header>
+        <nav class="nav">
+            <li><a style="color: white; text-decoration: none;" href="file:///C:/Users/User-Pc/anaconda3/envs/PycharmProjects/pycharm%20files/webpage/CSS/CSS_shop_201220.html">Home</a></li>
+            <li><a style="color: white; text-decoration: none;" href="#">Shop</a></li>
+            <li><a style="color: white; text-decoration: none;" href="#">Pictures</a></li>
+            <li><a style="color: white; text-decoration: none;" href="#">Film</a></li>
+            <li><a style="color: white; text-decoration: none;" href="#">Inspiration</a></li>
+        </nav>
+        <aside class="aside">
+            <ol id="li" style="text color=#111;">
+                <li><a style="text-decoration: none;" href="1.Pictures.html">Pictures</a></li>
+                <li><a style="text-decoration: none;" href="2.Film.html">Film</a></li>
+                <li><a style="text-decoration: none;" href="3.Inspiration.html">Inspiration</a></li>
+            </ol>
+        </aside>
+        <section class="article1">
+            <h2>Today's Epiphany</h2>
+                <div class="a1">
+                    <div class="a1_1">
+                        <img class="a1_p1" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/1.jpg">
+                        <div id="a1_d1" class="a1_p1">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a1_2">
+                        <img class="a1_p2" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/2.jpg">
+                        <div id="a1_d2" class="a1_p2">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a1_3">
+                        <img class="a1_p3" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/3.jpg">
+                        <div id="a1_d3" class="a1_p3">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a1_4">
+                        <img class="a1_p4" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/4.jpg">
+                        <div id="a1_d4" class="a1_p4">
+                            2020/11/27
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="article2">
+            <h2>Today's Epiphany</h2>
+                <div class="a2">
+                    <div class="a2_1">
+                        <img class="a2_p1" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/1.jpg">
+                        <div id="a2_d1" class="a2_p1">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a2_2">
+                        <img class="a2_p2" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/2.jpg">
+                        <div id="a2_d2" class="a2_p2">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a2_3">
+                        <img class="a2_p3" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/3.jpg">
+                        <div id="a2_d3" class="a2_p3">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a2_4">
+                        <img class="a2_p4" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/4.jpg">
+                        <div id="a2_d4" class="a2_p4">
+                            2020/11/27
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="article3">
+            <h2>Today's Epiphany</h2>
+                <div class="a3">
+                    <div class="a3_1">
+                        <img class="a3_p1" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/1.jpg">
+                        <div id="a3_d1" class="a3_p1">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a3_2">
+                        <img class="a3_p2" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/2.jpg">
+                        <div id="a3_d2" class="a3_p2">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a3_3">
+                        <img class="a3_p3" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/3.jpg">
+                        <div id="a3_d3" class="a3_p3">
+                            2020/11/27
+                        </div>
+                    </div>
+                    <div class="a3_4">
+                        <img class="a3_p4" src="C:\Users\User-Pc\anaconda3\envs\PycharmProjects\pycharm files\webpage\CSS\Pictures/4.jpg">
+                        <div id="a3_d4" class="a3_p4">
+                            2020/11/27
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>
